@@ -21,7 +21,6 @@ class TweetsController < ApplicationController
     params[:tweet][:user_id] = session[:id]
     @tweet = Tweet.new(message: params[:tweet][:message], user_id: params[:tweet][:user_id])
     if @tweet.save
-      flash[:notice] = "ツイートしました"
       redirect_to '/tweets/index'
     else
       flash[:notice] = "エラーっすよ"

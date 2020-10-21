@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'likes/create'
+  post 'likes'      => 'likes#create'
+  delete 'likes' => 'likes#destroy'
   get 'likes/destroy'
   get 'top/logout'
   get 'top/login'
