@@ -1,0 +1,12 @@
+<h1>ユーザ一覧</h1>
+<%= flash[:notice] %>
+
+<% @users.each do |user| %>
+      <p>
+          ユーザ名：
+          <%= user.uid %>
+       　 <%= link_to '削除',user, method: :delete, data: { confirm: "呟きを削除します。よろしいですか？"} %>
+      </p>
+<% end %>
+
+<%= link_to '新規登録', 'users/new' %>
