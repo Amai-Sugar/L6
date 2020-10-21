@@ -5,8 +5,9 @@
       <p>
           ユーザ名：
           <%= user.uid %>
-       　 <%= link_to '削除',user, method: :delete, data: { confirm: "呟きを削除します。よろしいですか？"} %>
+       　  <%= link_to '削除',user, method: :delete, data: { confirm: "ユーザを削除します。よろしいですか？"} %>
       </p>
 <% end %>
 
 <%= link_to '新規登録', 'users/new' %>
+<%= link_to 'ログイン', 'top/login' %>

@@ -1,0 +1,11 @@
+<h1>新規tweet</h1>
+
+<%= flash[:notice] %>
+ <%= form_for @tweet,:url => {controller: "tweets", action: "create"} do |f| %>
+    <p>
+        <%= f.label :message, '呟き' %>
+        <%= f.text_field :message, class: 'form-control' %>
+    </p>
+    <%= f.submit '呟く'%>
+  <% end %>
+<%= link_to '一覧', '/tweets/index' %>

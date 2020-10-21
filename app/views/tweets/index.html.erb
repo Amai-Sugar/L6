@@ -1,0 +1,15 @@
+<h1>Tweet一覧</h1>
+
+<% @tweets.each do |tweet| %>
+    <p>
+        ツイート：
+        <%= tweet.message %>
+        
+        ユーザ名：
+        <%= User.find_by(id: tweet.user_id).uid %>
+        <%= link_to '削除', tweet_path(tweet), method: :delete %>
+    </p>
+<% end %>
+
+<%= link_to '新しくツイートする', tweets_new_path %>
+<%= link_to "ログアウト", {controller: :top, action: :logout} %>
