@@ -2,7 +2,8 @@ class TweetsController < ApplicationController
 
   def index
     if session[:login_uid] == nil
-      redirect_to top_login_path
+      @tweets = Tweet.all
+      redirect_to top_main_path
     else
       @tweets = Tweet.all
       render tweets_index_path

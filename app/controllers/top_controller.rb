@@ -25,5 +25,9 @@ class TopController < ApplicationController
         render top_error_path
       end
   end
-
+  
+  def main
+    @tweets = Tweet.all
+  end
+  
 end

@@ -2,12 +2,14 @@
 
 <% @tweets.each do |tweet| %>
     <p>
+        ユーザ名：
+        <%= User.find_by(id: tweet.user_id).uid %><br>
+        
         ツイート：
         <%= tweet.message %>
-        ユーザ名：
-        <%= User.find_by(id: tweet.user_id).uid %>
         <%= link_to 'いいね', likes_path(tweet_id: tweet.id), method: :post %>
         <%= link_to 'いいね削除', likes_path(tweet_id: tweet.id), method: :delete %>
+        <%= "💓" %>
         <%= Like.where(tweet_id: tweet.id).count %>
     </p>
 <% end %>

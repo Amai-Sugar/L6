@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'tweets/new'
   post 'tweets/create'
   post 'top/login_check'
+  get 'top/main'
   resources :tweets
   
   resources :users

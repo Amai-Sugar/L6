@@ -1,0 +1,17 @@
+<h1>Tweet一覧</h1>
+
+<% @tweets.each do |tweet| %>
+    <p>
+        ユーザ名：
+        <%= User.find_by(id: tweet.user_id).uid %><br>
+        
+        ツイート：
+        <%= tweet.message %>
+
+        <%= "💓" %>
+        <%= Like.where(tweet_id: tweet.id).count %>
+    </p>
+<% end %>
+
+
+<%= link_to "アカウント作成", new_user_path %>
